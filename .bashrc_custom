@@ -13,3 +13,27 @@ if [ -s ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
     nvm use v4.2.3 &> /dev/null # silence nvm use; needed for rsync
 fi
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US.utf8"
+export LC_ALL="en_US.utf8"
+
+#remap capslock key to ctrl (to prevent emacs pinky)
+setxkbmap -option caps:ctrl_modifier
+
+# Enable git tab completion
+source ~/setup/git-completion.bash
+
+# colors!                                                                                                
+green="\[\033[0;32m\]"
+blue="\[\033[0;34m\]"
+purple="\[\033[0;35m\]"
+reset="\[\033[0m\]"
+
+# Change command prompt
+source ~/setup/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+# '\u' adds the name of the current user to the prompt
+# '\$(__git_ps1)' adds git-related stuff                                                   
+# '\W' adds the name of the current directory
+export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
