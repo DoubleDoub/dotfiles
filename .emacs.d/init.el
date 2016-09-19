@@ -74,6 +74,10 @@
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; -------------------
+;; -- Custom themes --
+;; -------------------
 (add-to-list 'custom-theme-load-path "~/dotfiles/.emacs.d/themes")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -82,3 +86,16 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes (quote ("fe230d2861a13bb969b5cdf45df1396385250cc0b7933b8ab9a2f9339b455f5c" default))))
+
+
+;; --------------------
+;; -- Backup options --
+;; --------------------
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
