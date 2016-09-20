@@ -1,4 +1,3 @@
-
 #AndroidDev PATH
 export PATH=${PATH}:~/sdk/android-sdk-linux/tools
 export PATH=${PATH}:~/sdk/android-sdk-linux/platform-tools
@@ -22,7 +21,9 @@ export LC_ALL="en_US.utf8"
 setxkbmap -option caps:ctrl_modifier
 
 # Enable git tab completion
-source ~/setup/git-completion.bash
+if [ -f ~/setup/git-completion.bash ]; then
+     source ~/setup/git-completion.bash
+fi
 
 # prompt colors!                                                                                                
 green="\[\033[0;32m\]"
