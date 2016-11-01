@@ -99,3 +99,4 @@
   version-control t)
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+(add-to-list 'custom-theme-load-path "~/dotfiles/.emacs.d/themes")
