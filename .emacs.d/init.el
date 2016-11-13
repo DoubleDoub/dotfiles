@@ -88,6 +88,34 @@
  '(custom-safe-themes (quote ("fe230d2861a13bb969b5cdf45df1396385250cc0b7933b8ab9a2f9339b455f5c" default))))
 
 
+;; ---------------
+;; -- Add MELPA --
+;; ---------------
+
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+;enable semantic color coding
+(add-hook 'after-init-hook 'global-color-identifiers-mode) ;https://github.com/ankurdave/color-identifiers-mode
+
+;; -------------------------------------
+;; -- TERN static javascript analysis --
+;; -------------------------------------
+;http://ternjs.net/doc/manual.html#emacs
+(add-to-list 'load-path "~/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;turn on autocomplete
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
+(add-hook 'after-init-hook 'auto-complete-mode)
+
 ;; --------------------
 ;; -- Backup options --
 ;; --------------------
