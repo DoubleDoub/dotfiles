@@ -28,6 +28,10 @@
 (setq suggest-key-bindings t)
 (setq vc-follow-symlinks t)
 
+;see matching pairs of parentheses etc
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -111,6 +115,9 @@
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 ;turn on autocomplete
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
 (eval-after-load 'tern
   '(progn
      (require 'tern-auto-complete)
