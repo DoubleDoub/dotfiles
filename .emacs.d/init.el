@@ -33,6 +33,10 @@
 (show-paren-mode 1)
 (electric-pair-mode t)
 
+; add directory to duplicate  buffer name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
