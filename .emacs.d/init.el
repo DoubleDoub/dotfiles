@@ -16,6 +16,7 @@
 (require 'whitespace)
 (require 'dired-x)
 (require 'compile)
+(require 'js-doc)
 (ido-mode t)
 (menu-bar-mode -1)
 (normal-erase-is-backspace-mode 0)
@@ -141,3 +142,20 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 (add-to-list 'custom-theme-load-path "~/dotfiles/.emacs.d/themes")
+
+
+
+;; ----------------------
+;; -- JS documentation --
+;; ----------------------
+
+
+(setq js-doc-mail-address "wwierda@gmail.com"
+       js-doc-author (format "Wietse" js-doc-mail-address)
+       js-doc-url "N/A"
+       js-doc-license "copyright")
+
+(add-hook 'js2-mode-hook
+           #'(lambda ()
+               (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
+               (define-key js2-mode-map "@" 'js-doc-insert-tag)))
