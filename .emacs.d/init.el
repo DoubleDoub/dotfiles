@@ -46,7 +46,7 @@
  '(default ((t (:inherit autoface-default :strike-through nil :underline nil :slant normal :weight normal :height 120 :width normal :family "monaco"))))
  '(column-marker-1 ((t (:background "red"))) t)
  '(diff-added ((t (:foreground "cyan"))) t)
- '(flymake-errline ((((class color) (background light)) (:background "Red"))) t)
+ '(flymake-errline ((((class color) (background light)) (:background "Red"))))
  '(font-lock-comment-face ((((class color) (min-colors 8) (background light)) (:foreground "red"))))
  '(fundamental-mode-default ((t (:inherit default))) t)
  '(highlight ((((class color) (min-colors 8)) (:background "white" :foreground "magenta"))))
@@ -54,7 +54,7 @@
  '(linum ((t (:foreground "black" :weight bold))))
  '(region ((((class color) (min-colors 8)) (:background "white" :foreground "magenta"))))
  '(secondary-selection ((((class color) (min-colors 8)) (:background "gray" :foreground "cyan"))))
- '(show-paren-match ((((class color) (background light)) (:background "black"))) t)
+ '(show-paren-match ((((class color) (background light)) (:background "black"))))
  '(vertical-border ((t nil))))
 
 ;; ------------
@@ -96,7 +96,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (monokai)))
- '(custom-safe-themes (quote ("fe230d2861a13bb969b5cdf45df1396385250cc0b7933b8ab9a2f9339b455f5c" default))))
+ '(custom-safe-themes
+   (quote
+    ("2925ed246fb757da0e8784ecf03b9523bccd8b7996464e587b081037e0e98001" "fe230d2861a13bb969b5cdf45df1396385250cc0b7933b8ab9a2f9339b455f5c" default))))
 
 
 ;; ---------------
@@ -187,3 +189,4 @@
 
 ;; fix anoying jshint error that require is not defined as variable
 (setq js2-include-node-externs t)
+(global-set-key "\C-cq" 'keyboard-quit)

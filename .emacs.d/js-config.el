@@ -22,7 +22,7 @@
 (setq compilation-error-regexp-alist
       (cons 'jshint-cli compilation-error-regexp-alist))
 
-(add-hook 'js-mode-hook '(lambda ()
+(add-hook 'js2-mode-hook '(lambda ()
                            (local-set-key "\C-x\C-e" 'eval-last-sexp)
                            (local-set-key "\C-cb" 'js-send-buffer)
                            (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
@@ -33,7 +33,7 @@
                            (set (make-local-variable 'compile-command) 
                                 (let ((file buffer-file-name)) (concat jshint-cli file)))
                            (set (make-local-variable 'compilation-read-command) nil)
-                           (local-set-key "\C-c\C-u" 'whitespace-clean-and-compile)
+                           (local-set-key "\C-cz" 'whitespace-clean-and-compile)
                            ))
 
 (defun node-repl-comint-preoutput-filter (output)
