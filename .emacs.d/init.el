@@ -159,3 +159,27 @@
            #'(lambda ()
                (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
                (define-key js2-mode-map "@" 'js-doc-insert-tag)))
+
+;; ------------------------------------------------------------------------------------------
+;; -- web-mode.el is an autonomous emacs major-mode for editing web templates.             --
+;; -- HTML documents can embed parts (CSS / JavaScript) and blocks (client / server side). --
+;; ------------------------------------------------------------------------------------------
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; set color for web-mode
+(set-face-attribute 'web-mode-doctype-face nil :foreground "SlateBlue")
+(set-face-attribute 'web-mode-html-tag-face nil :foreground "lightBlue")
+(set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "red")
+(set-face-attribute 'web-mode-html-attr-name-face nil :foreground "orange")
+(set-face-attribute 'web-mode-css-at-rule-face nil :foreground "Pink3")
+(set-face-attribute 'web-mode-variable-name-face nil :foreground "DarkGreen")
+(set-face-attribute 'web-mode-comment-face nil :foreground "red")
