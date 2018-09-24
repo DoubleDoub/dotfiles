@@ -225,3 +225,4 @@ command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sud
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
