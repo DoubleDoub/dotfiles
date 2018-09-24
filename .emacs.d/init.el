@@ -183,3 +183,7 @@
 (set-face-attribute 'web-mode-css-at-rule-face nil :foreground "Pink3")
 (set-face-attribute 'web-mode-variable-name-face nil :foreground "DarkGreen")
 (set-face-attribute 'web-mode-comment-face nil :foreground "red")
+
+
+;; fix anoying jshint error that require is not defined as variable
+(setq js2-include-node-externs t)
