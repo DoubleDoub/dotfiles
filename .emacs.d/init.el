@@ -190,3 +190,8 @@
 ;; fix anoying jshint error that require is not defined as variable
 (setq js2-include-node-externs t)
 (global-set-key "\C-cq" 'keyboard-quit)
+
+ 
+(require `prettier-js)
+(add-hook `js2-mode-hook `prettier-js-mode)
+(add-hook `web-mode-hook `prettier-js-mode)
